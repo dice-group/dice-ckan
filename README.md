@@ -56,7 +56,7 @@ docker-compose logs -f ckan
 ```
 
 There should be 5 containers running and 4 volumes. (Check the
-[original docs](shttps://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#build-docker-images)
+[original docs](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#build-docker-images)
 for details.)  
 Access your running instance at CKAN_SITE_URL (e.g. [localhost:5000](http://localhost:5000) or [datasets.dice-resarch.org:443](https://datasets.dice-resarch.org:443))
 
