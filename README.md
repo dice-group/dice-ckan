@@ -25,6 +25,7 @@ Get the code:
 
 ```shell
 git clone https://github.com/dice-group/dice-ckan.git
+cd dice-ckan
 git checkout dice-ckan-2.9.2
 ```
 
@@ -44,7 +45,7 @@ Start Docker:
 
 ```shell
 cd contrib/docker
-sudo docker-compose up -d --build
+docker-compose up -d --build
 ```
 
 On first runs, the postgres container could need longer to initialize the database cluster than the ckan container will wait for. This time span depends heavily on available system resources. If the CKAN logs show problems connecting to the database, restart the ckan container a few times:
@@ -72,7 +73,8 @@ docker exec ckan /usr/local/bin/ckan -c /etc/ckan/production.ini datastore set-p
 Add **datastore datapusher** to **ckan.plugins** and  enable the datapusher option **ckan.datapusher.formats**:
 
 ```shell
-sudo docker exec -it ckan bash
+docker exec -u 0 -it ckan bash # as root
+apt-get update ; apt-get install nano
 nano /etc/ckan/production.ini
 ```
 
@@ -95,12 +97,5 @@ Check if the datastore API returns content, e.g. at
 ### 4. Create CKAN admin user
 
 ```shell
-docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini sysadmin add wilke
+docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini sysadmin add dice-admin
 ```
-
-
-# TODO
-
-- HTTPS
-- DCAT extension
-- disable web account creation 
