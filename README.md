@@ -85,12 +85,6 @@ ckan.plugins = [...] datastore datapusher
 ckan.datapusher.formats = [...]
 ```
 
-Restart:
-
-```shell
-docker-compose restart ckan
-```
-
 Check if the datastore API returns content, e.g. at
 [localhost](http://localhost:5000/api/3/action/datastore_search?resource_id=_table_metadata) or
 [datasets.dice-research.org](https://datasets.dice-research.org:443/api/3/action/datastore_search?resource_id=_table_metadata).
@@ -110,7 +104,7 @@ Afterwards, the *default* user has to login, create the organization *DICE* and 
 
 ## Configuration
 
-You can edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/configuration.html#ckan-configuration-file)) via:
+Edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/configuration.html#ckan-configuration-file)) via:
 
 ```shell
 docker exec -it ckan nano /etc/ckan/production.ini
