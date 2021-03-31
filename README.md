@@ -7,13 +7,14 @@ This repository was forked from [ckan/ckan](https://github.com/ckan/ckan).
 
 To be able to keep the repositories in sync, to provide this readme file and not to end up in merge conflicts, the additional branch [dice](https://github.com/dice-group/dice-ckan/tree/dice) was created and set as default branch.
 
-When this repository was created, the latest CKAN version was [release 2.9.2](https://github.com/ckan/ckan/releases/tag/ckan-2.9.2) (commit 1b6d917). That version was used to create branch [dice-ckan-2.9.2](https://github.com/dice-group/dice-ckan/tree/dice-ckan-2.9.2). You can compare the [changes](https://github.com/dice-group/dice-ckan/compare/ckan-2.9.2..dice-ckan-2.9.2).
+When this repository was created, the latest CKAN version was [release 2.9.2](https://github.com/ckan/ckan/releases/tag/ckan-2.9.2) (commit 1b6d917). That version was used to create branch **[dice-ckan-2.9.2](https://github.com/dice-group/dice-ckan/tree/dice-ckan-2.9.2)**. You can compare the [changes](https://github.com/dice-group/dice-ckan/compare/ckan-2.9.2..dice-ckan-2.9.2).
 
 
 ## Installation using Docker
 
 The following installation instructions are based on [Docs 2.9.2: Installing CKAN with Docker Compose](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html).
 The  installation will run five Docker containers: CKAN, PostgreSQL, Redis, Solr and CKAN Datapusher.
+
 
 ### 1. Environment
 
@@ -28,6 +29,7 @@ git clone https://github.com/dice-group/dice-ckan.git
 cd dice-ckan
 git checkout dice-ckan-2.9.2
 ```
+
 
 ### 2. Build Docker images
 
@@ -64,7 +66,7 @@ Access your running instance at CKAN_SITE_URL (e.g. [localhost:5000](http://loca
 
 ### 3. Datastore and datapusher
 
-Execute the built-in setup script (this is a [fixed command](https://github.com/ckan/ckan/issues/5677#issuecomment-713279480)):
+Execute the built-in setup script (this is a [fixed command](https://github.com/ckan/ckan/issues/5677#issuecomment-713279480), as from CKAN 2.9 onwards, the paster command has been replaced with the ckan command):
 
 ```shell
 docker exec ckan /usr/local/bin/ckan -c /etc/ckan/production.ini datastore set-permissions | docker exec -i db psql -U ckan
@@ -94,8 +96,38 @@ Check if the datastore API returns content, e.g. at
 [datasets.dice-research.org](https://datasets.dice-research.org:443/api/3/action/datastore_search?resource_id=_table_metadata).
 
 
-### 4. Create CKAN admin user
+### 4. CKAN users
+
+You will be asked if you want to create a new user and for the related password to set.
 
 ```shell
-docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini sysadmin add dice-admin
+docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user setpass default
+docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user add dice
 ```
+
+Afterwards, the *default* user has to login, create the organization *DICE* and add the user *dice* with role *editor*.
+
+
+## Configuration
+
+You can edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/configuration.html#ckan-configuration-file)) via:
+
+```shell
+docker exec -it ckan nano /etc/ckan/production.ini
+```
+
+```ini
+ckan.auth.user_delete_groups = false
+ckan.auth.user_delete_organizations = false
+[...]
+ckan.auth.create_user_via_web = false
+[...]
+ckan.auth.public_user_details = false
+[...]
+ckan.site_title = DICE datasets
+[...]
+ckan.locale_order = en de pt_BR ja it cs_CZ ca es fr el sv sr sr@latin no sk fi ru pl nl bg ko_KR hu sa sl lv
+
+```
+
+
