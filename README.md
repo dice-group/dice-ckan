@@ -36,9 +36,9 @@ Create the configuration file [.env](https://github.com/dice-group/dice-ckan/blo
 cp contrib/docker/.env.dice.template contrib/docker/.env
 ```
 
-The file contains entries to run CKAN on localhost. For a production setup, edit **CKAN_SITE_URL** and **CKAN_PORT**.  
-You should also change the password entries **POSTGRES_PASSWORD** and **DATASTORE_READONLY_PASSWORD**.  
-To enable CKAN to send mails, set the **CKAN_SMTP_* ** entries.
+* The file contains entries to run CKAN on localhost. For a production setup, edit **CKAN_SITE_URL** and **CKAN_PORT**.
+* You should also change the password entries **POSTGRES_PASSWORD** and **DATASTORE_READONLY_PASSWORD**.
+* To enable CKAN to send mails, set the **CKAN_SMTP_*** entries.
 
 Start Docker:
 
@@ -55,7 +55,9 @@ docker ps | grep ckan
 docker-compose logs -f ckan
 ```
 
-There should be 5 containers running and 4 volumes. (Check the [original docs](shttps://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#build-docker-images) for details.)  
+There should be 5 containers running and 4 volumes. (Check the
+[original docs](shttps://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#build-docker-images)
+for details.)  
 Access your running instance at CKAN_SITE_URL (e.g. [localhost:5000](http://localhost:5000) or [datasets.dice-resarch.org:443](https://datasets.dice-resarch.org:443))
 
 
@@ -86,13 +88,19 @@ docker-compose restart ckan
 ```
 
 Check if the datastore API returns content, e.g. at
-[localhost](localhost:5000/api/3/action/datastore_search?resource_id=_table_metadata
-) or
-[datasets.dice-resarch.org](https://datasets.dice-resarch.org:443/api/3/action/datastore_search?resource_id=_table_metadata
-).
+[localhost](localhost:5000/api/3/action/datastore_search?resource_id=_table_metadata) or
+[datasets.dice-resarch.org](https://datasets.dice-resarch.org:443/api/3/action/datastore_search?resource_id=_table_metadata).
 
-4. Create CKAN admin user
+
+### 4. Create CKAN admin user
 
 ```shell
 docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini sysadmin add wilke
 ```
+
+
+# TODO
+
+- HTTPS
+- DCAT extension
+- disable web account creation 
