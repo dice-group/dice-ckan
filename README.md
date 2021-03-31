@@ -58,7 +58,7 @@ docker-compose logs -f ckan
 There should be 5 containers running and 4 volumes. (Check the
 [original docs](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#build-docker-images)
 for details.)  
-Access your running instance at CKAN_SITE_URL (e.g. [localhost:5000](http://localhost:5000) or [datasets.dice-resarch.org:443](https://datasets.dice-resarch.org:443))
+Access your running instance at CKAN_SITE_URL (e.g. [localhost:5000](http://localhost:5000) or [datasets.dice-research.org:443](https://datasets.dice-research.org:443))
 
 
 ### 3. Datastore and datapusher
@@ -88,8 +88,8 @@ docker-compose restart ckan
 ```
 
 Check if the datastore API returns content, e.g. at
-[localhost](localhost:5000/api/3/action/datastore_search?resource_id=_table_metadata) or
-[datasets.dice-resarch.org](https://datasets.dice-resarch.org:443/api/3/action/datastore_search?resource_id=_table_metadata).
+[localhost](http://localhost:5000/api/3/action/datastore_search?resource_id=_table_metadata) or
+[datasets.dice-research.org](https://datasets.dice-research.org:443/api/3/action/datastore_search?resource_id=_table_metadata).
 
 
 ### 4. Create CKAN admin user
