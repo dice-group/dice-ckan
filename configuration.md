@@ -37,7 +37,9 @@ Two users and passwords are known:
 ```
 # About
 
-The datasets available here are provided by the DICE group of Paderborn University. If you have any questions, please contact the respective contact persons or visit our website at [dice-research.org](https://dice-research.org/).
+The datasets available here are provided by the DICE group of Paderborn University.
+
+If you have any questions, please contact the respective contact persons or visit our website at [dice-research.org](https://dice-research.org/).
 ```
 
 * Intro Text:

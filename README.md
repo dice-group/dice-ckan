@@ -1,14 +1,6 @@
 # DICE CKAN
 
-
-## About this repository
-
-This repository was forked from [ckan/ckan](https://github.com/ckan/ckan).
-
-To be able to keep the repositories in sync, to provide this readme file and not to end up in merge conflicts, the additional branch [dice](https://github.com/dice-group/dice-ckan/tree/dice) was created and set as default branch.
-
-When this repository was created, the latest CKAN version was [release 2.9.2](https://github.com/ckan/ckan/releases/tag/ckan-2.9.2) (commit 1b6d917). That version was used to create branch **[dice-ckan-2.9.2](https://github.com/dice-group/dice-ckan/tree/dice-ckan-2.9.2)**. You can compare the [changes](https://github.com/dice-group/dice-ckan/compare/ckan-2.9.2..dice-ckan-2.9.2).
-
+![](images/screenshot.jpg)
 
 ## Installation using Docker
 
@@ -128,3 +120,12 @@ ckan.locale_order = en de pt_BR ja it cs_CZ ca es fr el sv sr sr@latin no sk fi 
 ## Finalization
 
 Additional configuration can be set afterwards in the Web interface. There are some [default settings](configuration.md).
+
+
+## About this repository
+
+This repository was forked from [ckan/ckan](https://github.com/ckan/ckan).
+
+To be able to keep the repositories in sync, to provide this readme file and not to end up in merge conflicts, the additional branch [dice](https://github.com/dice-group/dice-ckan/tree/dice) was created and set as default branch.
+
+When this repository was created, the latest CKAN version was [release 2.9.2](https://github.com/ckan/ckan/releases/tag/ckan-2.9.2) (commit 1b6d917). That version was used to create branch **[dice-ckan-2.9.2](https://github.com/dice-group/dice-ckan/tree/dice-ckan-2.9.2)**. You can compare the [changes](https://github.com/dice-group/dice-ckan/compare/ckan-2.9.2..dice-ckan-2.9.2).
