@@ -99,9 +99,6 @@ docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user setpas
 docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user add dice
 ```
 
-Afterwards, the *default* user has to login, create the organization *DICE* and add the user *dice* with role *editor*.
-
-
 ## Configuration
 
 Edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/configuration.html#ckan-configuration-file)) via:
@@ -120,8 +117,14 @@ ckan.auth.public_user_details = false
 [...]
 ckan.site_title = DICE datasets
 [...]
+ckan.favicon = /base/images/dice-favicon.png
+[...]
+licenses_group_url = http://licenses.opendefinition.org/licenses/groups/ckan.json
+[...]
 ckan.locale_order = en de pt_BR ja it cs_CZ ca es fr el sv sr sr@latin no sk fi ru pl nl bg ko_KR hu sa sl lv
 
 ```
 
+## Finalization
 
+Additional configuration can be set afterwards in the Web interface. There are some [default settings](configuration.md).
