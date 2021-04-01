@@ -32,6 +32,22 @@ Two users and passwords are known:
 
 * Site Title: DICE datasets
 * [Site logo](images/site-logo-dice-datasets.png)
+* About:
+
+```
+# About
+
+The datasets available here are provided by the DICE group of Paderborn University. If you have any questions, please contact the respective contact persons or visit our website at [dice-research.org](https://dice-research.org/).
+```
+
+* Intro Text:
+
+```
+# Welcome to DICE datasets
+
+Information about the DICE group can be found on our website at [dice-research.org](https://dice-research.org/).
+```
+
 * Custom CSS:
 
 ```css
@@ -51,6 +67,7 @@ body { background-color: #006BD9 }
 /* search startpage */
 .homepage .module-search .module-content { background-color: #0453A4 }
 .homepage .module-search .tags { background-color: #014790 }
+.homepage section.featured.media-overlay { display: none; }
 ```
 
 * Homepage: Search, introductory area and stats
