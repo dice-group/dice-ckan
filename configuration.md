@@ -55,7 +55,7 @@ If you have any questions, please contact the respective contact persons or visi
 ```
 # Welcome to DICE datasets
 
-Information about the DICE group can be found on our website at [dice-research.org](https://dice-research.org/).
+Information about the DICE group can be found at [dice-research.org](https://dice-research.org/).
 ```
 
 * Custom CSS:
