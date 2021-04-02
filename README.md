@@ -84,7 +84,8 @@ Check if the datastore API returns content, e.g. at
 
 ### 4. CKAN users
 
-You will be asked if you want to create a new user and for the related password to set.
+You will be asked if you want to create a new user and for the related password to set.  
+E-Mail values can be nomail@example.org.
 
 ```shell
 docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user setpass default

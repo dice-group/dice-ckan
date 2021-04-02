@@ -1,6 +1,7 @@
 # Configuration
 
-Configuration in the web UI.
+Configuration in the web UI.  
+Login with user *default* to edit settings.
 
 ## Presettings
 
@@ -12,26 +13,33 @@ Two users and passwords are known:
 ## Users
 
 * User default
+    * http://localhost:5000/user/edit/default
     * Full name: DICE Admin
-    * [Profile picture](images/dice-avatar.png)
+    * Email: nomail@example.org
+    * [Profile picture](../../raw/dice/images/dice-avatar.png)
 * User dice
+    * http://localhost:5000/user/edit/dice
     * Full name: DICE
-    * [Profile picture](images/dice-avatar.png)
+    * Email: nomail@example.org
+    * [Profile picture](../../raw/dice/images/dice-avatar.png)
 
 ## Organizations
 
 * Organization DICE
+    * http://localhost:5000/organization/new
     * Name: DICE
     * URL: .../organization/dice
-    * [Image](images/dice-organization.svg)
+    * [Image](../../raw/dice/imagesdice-organization.svg)
     * Members
+        * http://localhost:5000/organization/members/dice
         * default "DICE Admin", role: Admin
         * dice "DICE", role: Editor
 
 ## CKAN config
 
+* http://localhost:5000/ckan-admin/config
 * Site Title: DICE datasets
-* [Site logo](images/site-logo-dice-datasets.png)
+* [Site logo](../../raw/dice/imagessite-logo-dice-datasets.png)
 * About:
 
 ```
