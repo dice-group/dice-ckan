@@ -29,7 +29,7 @@ Two users and passwords are known:
     * http://localhost:5000/organization/new
     * Name: DICE
     * URL: .../organization/dice
-    * [Image](../../raw/dice/imagesdice-organization.svg)
+    * [Image](../../raw/dice/images/dice-organization.svg)
     * Members
         * http://localhost:5000/organization/members/dice
         * default "DICE Admin", role: Admin
@@ -39,7 +39,7 @@ Two users and passwords are known:
 
 * http://localhost:5000/ckan-admin/config
 * Site Title: DICE datasets
-* [Site logo](../../raw/dice/imagessite-logo-dice-datasets.png)
+* [Site logo](../../raw/dice/images/site-logo-dice-datasets.png)
 * About:
 
 ```

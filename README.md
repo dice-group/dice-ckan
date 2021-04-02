@@ -92,7 +92,7 @@ docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user setpas
 docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user add dice
 ```
 
-## Configuration
+### Configuration
 
 Edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/configuration.html#ckan-configuration-file)) via:
 
@@ -118,7 +118,7 @@ ckan.locale_order = en de pt_BR ja it cs_CZ ca es fr el sv sr sr@latin no sk fi 
 
 ```
 
-## Finalization
+## Configuration via web frontend
 
 Additional configuration can be set afterwards in the Web interface. There are some [default settings](configuration.md).
 
