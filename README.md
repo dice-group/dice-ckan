@@ -14,9 +14,9 @@ Note: A HTTPS configuration is not integrated in this setup.
 
 The docker people used a cloud based VM with 16 GB storage. They mounted a 100 GB btrfs-formatted external storage volume and symlinked /var/lib/docker to the external volume.
 
-Install *Docker* and *Docker Compose*.
+Install *Docker* and *Docker Compose* on your system.
 
-Get the code:
+Get the DICE CKAN source files:
 
 ```shell
 git clone https://github.com/dice-group/dice-ckan.git
@@ -91,10 +91,12 @@ Check if the datastore API returns content, e.g. at
 
 ### 4. CKAN admin user
 
-Set a password for the admin user *default*:
+You will be asked if you want to create a new user and for the related password to set.  
+E-Mail values can be nomail@example.org.
 
 ```shell
 docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user setpass default
+docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user add dice
 ```
 
 
@@ -105,7 +107,7 @@ Not integrated now. Can be added later, see [docs](https://docs.ckan.org/en/2.9/
 
 ### 6. Add DCAT extension
 
-Install *unzip*:
+Install unzip:
 
 ```shell
 docker exec -u 0 -it ckan bash # as root
@@ -149,6 +151,8 @@ Edit the configuration file ([docs](https://docs.ckan.org/en/2.9/maintaining/con
 docker exec -it ckan nano /etc/ckan/production.ini
 ```
 
+Values:
+
 ```ini
 ## Authorization Settings
 [...]
@@ -176,6 +180,7 @@ ckan.locale_order = en de es fr it pl nl ru pt_BR ja cs_CZ ca el sv sr fi sr@lat
 
 ## Configuration via web frontend
 
+The main installation is complete.
 Additional configuration can be set afterwards in the Web interface. There are some prepared [default settings](configuration.md).
 
 

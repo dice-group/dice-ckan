@@ -1,21 +1,14 @@
 # Configuration
 
 Configuration in the web UI.  
-Login with user *default* to edit settings.
-
-## Presettings
-
-Two users and passwords are known:
-
-* default (sysadmin)
-* dice (user)
+Login with sysadmin user *default* to edit settings.
 
 ## Users
 
 * User default
     * http://localhost:5000/user/edit/default
     * Full name: DICE Admin
-    * Email: nomail@example.org
+    * Email: nomail@example.com
     * [Profile picture](../../raw/dice/images/dice-avatar.png)
 * User dice
     * http://localhost:5000/user/edit/dice
