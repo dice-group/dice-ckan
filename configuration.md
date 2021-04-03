@@ -41,12 +41,35 @@ Login with sysadmin user *default* to edit settings.
 The datasets available here are provided by the DICE group of Paderborn University.
 
 If you have any questions, please contact the respective contact persons or visit our website at [dice-research.org](https://dice-research.org/).
+
+## Catalog
+
+Access the catalog metadata structured by the [Data Catalog Vocabulary (DCAT)](https://www.w3.org/TR/vocab-dcat-2/) and various serializations:
+
+* [JSON-LD](/catalog.jsonld)
+* [RDF/XML](/catalog.xml)
+* [Turtle](/catalog.ttl)
+
+## API
+
+The data can be accessed by the [CKAN API](https://docs.ckan.org/en/2.9/api/). The API returns [JSON](https://www.json.org/) or [JSONP](https://en.wikipedia.org/wiki/JSONP) data. Examples:
+
+* Request all dataset IDs:  
+  [/api/3/action/package_list](http://localhost:5000/api/3/action/package_list)
+* Request a single dataset:  
+  */api/3/action/package_show?id=ID*
+* Search:  
+  [/api/3/action/package_search?q=dice](/api/3/action/package_search?q=dice)
+* Search and return JSONP:  
+  [/api/3/action/package_search?q=dice&callback=callbackfunction](/api/3/action/package_search?q=dice&callback=callbackfunction)
 ```
 
 * Intro Text:
 
 ```
 # Welcome to DICE datasets
+
+[Explore the available datasets](/dataset/) or have a look at [other access methods](/about).
 
 Information about the DICE group can be found at [dice-research.org](https://dice-research.org/).
 ```
@@ -70,7 +93,8 @@ body { background-color: #006BD9 }
 /* search startpage */
 .homepage .module-search .module-content { background-color: #0453A4 }
 .homepage .module-search .tags { background-color: #014790 }
-.homepage section.featured.media-overlay { display: none; }
+.homepage section.featured.media-overlay { display: none }
+.homepage .module-content h1 { margin-top:0px }
 ```
 
 * Homepage: Search, introductory area and stats
