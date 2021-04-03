@@ -38,8 +38,7 @@ Login with sysadmin user *default* to edit settings.
 ```
 # About
 
-The datasets available here are provided by the DICE group of Paderborn University.
-
+The datasets available here are provided by the DICE group of Paderborn University.  
 If you have any questions, please contact the respective contact persons or visit our website at [dice-research.org](https://dice-research.org/).
 
 ## Catalog
@@ -69,8 +68,7 @@ The data can be accessed by the [CKAN API](https://docs.ckan.org/en/2.9/api/). T
 ```
 # Welcome to DICE datasets
 
-[Explore the available datasets](/dataset/) or have a look at [other access methods](/about).
-
+[Explore the available datasets](/dataset/) or have a look at [other access methods](/about).  
 Information about the DICE group can be found at [dice-research.org](https://dice-research.org/).
 ```
 
@@ -94,7 +92,8 @@ body { background-color: #006BD9 }
 .homepage .module-search .module-content { background-color: #0453A4 }
 .homepage .module-search .tags { background-color: #014790 }
 .homepage section.featured.media-overlay { display: none }
-.homepage .module-content h1 { margin-top:0px }
+.homepage .module-content h1 { margin-top: -14px ; margin-bottom: 5px }
+.homepage .module-content p { margin-bottom: -5px }
 ```
 
 * Homepage: Search, introductory area and stats
