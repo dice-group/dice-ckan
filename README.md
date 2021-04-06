@@ -176,6 +176,11 @@ licenses_group_url = http://licenses.opendefinition.org/licenses/groups/ckan.jso
 ## Internationalisation Settings
 [...]
 ckan.locale_order = en de es fr it pl nl ru pt_BR ja cs_CZ ca el sv sr fi sr@latin no sk bg ko_KR hu sa sl lv
+[...]
+
+## Storage Settings
+[...]
+ckan.max_resource_size = 0
 ```
 
 ## Configuration via web frontend
