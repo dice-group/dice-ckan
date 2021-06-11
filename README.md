@@ -105,7 +105,10 @@ docker exec -it ckan /usr/local/bin/ckan -c /etc/ckan/production.ini user add di
 Not integrated now. Can be added later, see [docs](https://docs.ckan.org/en/2.9/maintaining/installing/install-from-docker-compose.html#migrate-data).
 
 
-### 6. Add DCAT extension
+### 6. Add extensions
+
+
+#### Add DCAT extension
 
 Install unzip:
 
@@ -141,6 +144,36 @@ ckan.plugins = [...] dcat dcat_json_interface structured_data
 Check if the catalog is available, e.g. at
 [localhost:5000/catalog.ttl](http://localhost:5000/catalog.ttl) or
 [datasets.dice-research.org:443/catalog.ttl](https://datasets.dice-research.org:443/catalog.ttl).
+
+
+#### Add DICE extension
+
+Install the extension:
+
+```shell
+docker exec -it ckan bash
+source $CKAN_VENV/bin/activate && cd $CKAN_VENV/src/
+wget -O dice-ckanext-master.zip https://github.com/dice-group/dice-ckanext/archive/refs/heads/master.zip
+unzip dice-ckanext-master.zip
+cd dice-ckanext-master/
+python setup.py install
+```
+
+Add the extension to CKAN plugins:
+
+```shell
+docker exec -it ckan nano /etc/ckan/production.ini
+```
+
+Values:
+
+```ini
+ckan.plugins = [...] dice
+```
+
+Check if the field *Publisher URI* is displayed on creating a new dataset, e.g. at
+[localhost:5000/dataset/new](http://localhost:5000/dataset/new) or
+[datasets.dice-research.org:443/dataset/new](https://datasets.dice-research.org:443/dataset/new).
 
 
 ### 7. Configuration
