@@ -22,6 +22,7 @@ Login with sysadmin user *default* to edit settings.
     * http://localhost:5000/organization/new
     * Name: DICE
     * URL: .../organization/dice
+    * Description: The Data Science group (DICE) at Paderborn University
     * [Image](../../raw/dice/images/dice-organization.svg)
     * Members
         * http://localhost:5000/organization/members/dice
@@ -54,7 +55,7 @@ Access the catalog metadata structured by the [Data Catalog Vocabulary (DCAT)](h
 The data can be accessed by the [CKAN API](https://docs.ckan.org/en/2.9/api/). The API returns [JSON](https://www.json.org/) or [JSONP](https://en.wikipedia.org/wiki/JSONP) data. Examples:
 
 * Request all dataset IDs:  
-  [/api/3/action/package_list](http://localhost:5000/api/3/action/package_list)
+  [/api/3/action/package_list](/api/3/action/package_list)
 * Request a single dataset:  
   */api/3/action/package_show?id=ID*
 * Search:  
