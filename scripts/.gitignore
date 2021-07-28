@@ -1,1 +1,5 @@
+# File containing CKAN API token
+api-token.txt
+
+# File created by current_package_list_with_resources.sh
 current_package_list_with_resources.txt
